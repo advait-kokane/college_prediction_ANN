@@ -324,6 +324,74 @@ div[data-testid="stThumbValue"] + div > div > div {
     background: rgba(100, 255, 218, 0.1) !important;
     border: 1px solid rgba(64, 255, 200, 0.3) !important;
 }
+
+
+
+
+
+
+/* Results Table */
+.result-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 1.5rem 0 !important;
+    font-size: 1.05rem !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35) !important;
+    background: rgba(10, 25, 47, 0.65) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.result-table th {
+    background: var(--gradient) !important;
+    color: var(--deep-navy) !important;
+    text-align: center !important;
+    padding: 12px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+}
+
+.result-table td {
+    padding: 12px !important;
+    text-align: center !important;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.15) !important;
+    color: var(--light-slate) !important;
+    font-weight: 500 !important;
+}
+
+/* Hover effect */
+.result-table tr:hover td {
+    background: rgba(100, 255, 218, 0.08) !important;
+    color: var(--cool-teal) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Rank column highlight */
+.result-table td:first-child {
+    font-weight: 700 !important;
+    color: var(--cool-teal) !important;
+}
+
+/* Animated badge */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 8px;
+    background: var(--highlight);
+    color: var(--cool-teal);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-left: 8px;
+    animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.5); }
+    70% { box-shadow: 0 0 0 8px rgba(100, 255, 218, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(100, 255, 218, 0); }
+}
+
 </style>
 """
 st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
@@ -725,6 +793,7 @@ if st.button("🔍 Predict Possible Colleges"):
 #     # Also let user expand to see full list
 #     with st.expander("See full list"):
 #         st.markdown(results_df.to_html(index=False, classes="result-table"), unsafe_allow_html=True)
+
 
 
 
