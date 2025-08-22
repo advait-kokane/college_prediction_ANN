@@ -184,22 +184,22 @@ div[data-testid="stThumbValue"] + div > div > div {
     left: 0;
     right: 0;
     width: 100%;
-    background: rgba(10, 25, 47, 0.95);
-    color: #e6f1ff;
+    background: rgba(10, 25, 47, 0.9);
+    color: var(--light-slate);
     text-align: center;
-    padding: 8px 15px;
+    padding: 10px 15px;
     font-size: 0.9rem;
-    border-top: 1px solid rgba(100, 255, 218, 0.3);
-    z-index: 9999;
+    border-top: 1px solid rgba(100, 255, 218, 0.2);
+    z-index: 999;
 }
 .footer strong {
-    color: #64ffda;
+    color: var(--cool-teal);
 }
-"""
-
 
 </style>
 """
+
+
 st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
 
 st.title("🎓 College Admission Predictor")
@@ -307,17 +307,17 @@ if st.button("🔍 Predict Possible Colleges"):
 
 
 
-# Permanent fixed footer (always visible)
 st.markdown(
     """
     <div class="footer">
-        <strong>Note:</strong> This prediction is only a guide. Final admission depends on the college. 
+        🔔 <strong>Note:</strong> This prediction is only a guide. Final admission depends on the college. 
         Sometimes seats remain after CAP rounds, and colleges may allot them differently. 
         Always confirm with the college before making a decision. 🎓
     </div>
     """,
     unsafe_allow_html=True
 )
+
 
 
 
