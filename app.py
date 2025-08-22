@@ -176,6 +176,27 @@ div[data-testid="stThumbValue"] + div > div > div {
     font-weight: 700 !important;
     color: var(--cool-teal) !important;
 }
+
+/* Fixed footer note */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(10, 25, 47, 0.9);
+    color: var(--light-slate);
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(100, 255, 218, 0.2);
+    z-index: 999;
+}
+.footer strong {
+    color: var(--cool-teal);
+}
+
+
 </style>
 """
 st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
@@ -282,6 +303,17 @@ if st.button("🔍 Predict Possible Colleges"):
     # ✅ Show full list directly (no top5 / no expander / no badge)
     st.markdown("### 🎯 Recommended Colleges")
     st.markdown(results_df.to_html(index=False, classes="result-table"), unsafe_allow_html=True)
+
+st.markdown(
+    """
+    <div class="footer">
+        🔔 <strong>Note:</strong> This prediction is only a guide. Final admission depends on the college. 
+        Sometimes seats remain after CAP rounds, and colleges may allot them differently. 
+        Always confirm with the college before making a decision. 🎓
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 
 
