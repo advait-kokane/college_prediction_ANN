@@ -305,7 +305,9 @@ if st.button("🔍 Predict Possible Colleges"):
     st.markdown("### 🎯 Recommended Colleges")
     st.markdown(results_df.to_html(index=False, classes="result-table"), unsafe_allow_html=True)
 
-# Permanent fixed footer
+
+
+# Permanent fixed footer (always visible)
 st.markdown(
     """
     <div class="footer">
@@ -316,6 +318,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
 
