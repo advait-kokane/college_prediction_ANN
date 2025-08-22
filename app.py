@@ -269,7 +269,8 @@ if st.button("🔍 Predict Possible Colleges"):
                 college_best[college_name] = prob_pct
 
     if not college_best:
-        st.error("❌ No colleges qualify with your marks for this filter.")
+        st.error("❌ No colleges qualify with your marks. ")
+        st.error("Cutoff is higher than your marks for this requirement. ")
         st.stop()
 
     items = sorted(college_best.items(), key=lambda x: -x[1])
@@ -281,5 +282,6 @@ if st.button("🔍 Predict Possible Colleges"):
     # ✅ Show full list directly (no top5 / no expander / no badge)
     st.markdown("### 🎯 Recommended Colleges")
     st.markdown(results_df.to_html(index=False, classes="result-table"), unsafe_allow_html=True)
+
 
 
