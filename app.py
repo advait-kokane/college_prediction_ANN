@@ -311,13 +311,14 @@ if st.button("🔍 Predict Possible Colleges"):
 st.markdown(
     """
     <div class="footer">
-        🔔 <strong>Note:</strong> This prediction is only a guide. Final admission depends on the college. 
+        <strong>Note:</strong> This prediction is only a guide. Final admission depends on the college. 
         Sometimes seats remain after CAP rounds, and colleges may allot them differently. 
         Always confirm with the college before making a decision. 🎓
     </div>
     """,
     unsafe_allow_html=True
 )
+
 
 
 
