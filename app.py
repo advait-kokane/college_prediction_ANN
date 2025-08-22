@@ -445,37 +445,7 @@ if st.button("🔍 Predict Possible Colleges"):
 
     # Pretty HTML table
     st.markdown("### 🎯 Recommended Colleges")
-    # Stylish table
-        st.markdown(
-            """
-            <style>
-            .result-table {
-                width: 100%;
-                border-collapse: collapse;
-                box-shadow: 0 4px 15px rgba(100, 255, 218, 0.2);
-                border-radius: 10px;
-                overflow: hidden;
-            }
-            .result-table th, .result-table td {
-                padding: 12px 15px;
-                text-align: left;
-            }
-            .result-table th {
-                background: linear-gradient(135deg, #64ffda 0%, #1e90ff 100%);
-                color: #0a192f;
-                font-weight: 600;
-            }
-            .result-table tr:nth-child(even) {
-                background: rgba(100,255,218,0.05);
-            }
-            .result-table tr:hover {
-                background: rgba(100,255,218,0.15);
-                transition: 0.3s;
-            }
-            </style>
-            """, unsafe_allow_html=True
-        )
-        st.markdown(result_df.to_html(index=False, classes="result-table"), unsafe_allow_html=True)
+    st.markdown(top5_df.to_html(index=False, classes="result-table"), unsafe_allow_html=True)
 
     # Also let user expand to see full list
     with st.expander("See full list"):
