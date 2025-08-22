@@ -184,17 +184,18 @@ div[data-testid="stThumbValue"] + div > div > div {
     left: 0;
     right: 0;
     width: 100%;
-    background: rgba(10, 25, 47, 0.9);
-    color: var(--light-slate);
+    background: rgba(10, 25, 47, 0.95);
+    color: #e6f1ff;
     text-align: center;
-    padding: 10px 15px;
+    padding: 8px 15px;
     font-size: 0.9rem;
-    border-top: 1px solid rgba(100, 255, 218, 0.2);
-    z-index: 999;
+    border-top: 1px solid rgba(100, 255, 218, 0.3);
+    z-index: 9999;
 }
 .footer strong {
-    color: var(--cool-teal);
+    color: #64ffda;
 }
+"""
 
 
 </style>
@@ -304,6 +305,7 @@ if st.button("🔍 Predict Possible Colleges"):
     st.markdown("### 🎯 Recommended Colleges")
     st.markdown(results_df.to_html(index=False, classes="result-table"), unsafe_allow_html=True)
 
+# Permanent fixed footer
 st.markdown(
     """
     <div class="footer">
@@ -314,6 +316,8 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+
 
 
 
